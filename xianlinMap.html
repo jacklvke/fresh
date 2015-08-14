@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>南京大学研究生迎新网</title>
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=i2OkA8fTgURvDgQDEPvm5w5O"></script>
+		<style type="text/css">
+			body{
+				padding-top:70px;
+			}
+			#searchButton{
+				background: #6D0D6C;
+				color: #fff;
+			}
+		</style>
+		
+	</head>
+	<body>
+ 	<div  class="container-fluid">
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="menu">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="glyphicon glyphicon-list" aria-hidden="true" ></span>
+	          </button>
+	         <a class="navbar-brand" href="index.html"><img src="pic/logo.png"></a>
+	        </div>
+	        <div class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li ><a href="index.html">首页</a></li>
+	            <li><a href="about.html">关于南大</a></li>
+	            <li><a class="dropdown-toggle" data-toggle="dropdown"   href="#contact">研究生院<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="graduateSchool.html">关于研究生院</a></li>
+						<li><a href="loan.htm">助学贷款</a></li>
+						<li><a href="http://219.219.115.21/_s24/918/list.psp" target="_blank">研究生培养</a></li>
+           		   	    <li><a href="http://219.219.115.21/_s24/930/list.psp" target="_blank">奖学金</a></li>
+		       	        <li><a href="http://219.219.115.21/_s24/922/list.psp" target="_blank">研究生学位</a></li>
+					</ul>
+	            </li>
+	            <li class="active">
+	              <a class="dropdown-toggle" data-toggle="dropdown" href="#">学校生活<b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	              	<li><a href="needToKnow.html">开学须知</a></li>
+	                <li><a href="gulouMap.html">鼓楼地图</a></li>
+	                <li><a href="xianlinMap.html">仙林地图</a></li>
+	              </ul>
+	            </li>
+	            <li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">研究生会<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="schoolUnion.html">研会介绍</a></li>
+						<li><a href="activity.html">研会活动</a></li>
+					</ul>
+	            </li>
+	          </ul>
+	         
+	        </div><!--导航条结束 -->
+	       </div>
+	     </div>
+	     </div>
+	     <div class="container" style="text-align:center">
+	     	<h1>南京大学仙林地图</h1>
+	     	<!--百度地图容器-->
+	     	<div class="form-horizontal">
+	     	<div class="form-group" style="text-align:center">
+	     		<div class="col-md-9">
+	     			<input type="text" id="searchKey" class="form-control" placeholder="输入你要搜索的地址">
+	     		</div>
+	     		<div class="col-md-3">
+	     			<button class="btn btn-default btn-block" id="searchButton">搜索</button>
+	     		</div>
+	     		
+	     	</div>
+			</div>
+		
+	     	
+	     		<div style="height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+	     		<div id="r-result"></div>
+	     	
+    		
+
+	     </div>
+	     </body>
+	     <script type="text/javascript" src="http://api.map.baidu.com/library/AreaRestriction/1.2/src/AreaRestriction_min.js">
+        </script>
+
+		<script type="text/javascript">
+		    //创建和初始化地图函数：
+		    function initMap(){
+		      createMap();//创建地图
+		      setMapEvent();//设置地图事件
+		      addMapControl();//向地图添加控件
+		      addMapOverlay();//向地图添加覆盖物
+		    }
+		    
+		    function createMap(){ 
+		      map = new BMap.Map("map" ,{minZoom:15,maxZoom:0}); 
+		      var mPoint=new BMap.Point(118.970929,32.119495);
+		      map.centerAndZoom(mPoint,15);
+		      //var b = new BMap.Bounds(new BMap.Point(118.78105,32.065166),new BMap.Point(118.790572,32.056445));
+		      
+		      /*
+		       try {
+			      BMapLib.AreaRestriction.setBounds(map, b);
+			  	} catch(e) {
+			      alert(e);
+			   }*/
+
+		    }
+		    function setMapEvent(){
+		      map.enableScrollWheelZoom();
+		      map.enableKeyboard();
+		      map.enableDragging();
+		      map.enableDoubleClickZoom()
+		    }
+		    function addClickHandler(target,window){
+		      	target.addEventListener("click",function(){
+		        target.openInfoWindow(window);
+		      });
+		    }
+		    function addMapOverlay(){
+		    }
+		    //向地图添加控件
+		    function addMapControl(){
+		      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:3});
+		      map.addControl(navControl);
+		    }
+		    function searchMap(searchText){
+		      	var mPoint=new BMap.Point(118.970929,32.119495);
+		    	var local = new BMap.LocalSearch(map, {renderOptions: {map: map, panel: "r-result"}});
+		      	local.searchNearby(searchText,mPoint,1000);
+			  	
+		    }
+		     
+		    var map;
+		    initMap();
+		   	$("#searchButton").click(function(){
+		    	var searchText=$("#searchKey").val();
+		    	searchMap(searchText);
+		    });
+
+
+		  </script>
+
+
+	     </html>
