@@ -14,9 +14,7 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=i2OkA8fTgURvDgQDEPvm5w5O"></script>
 		<style type="text/css">
-			body{
-				padding-top:70px;
-			}
+			
 			#searchButton{
 				background: #6D0D6C;
 				color: #fff;
@@ -25,20 +23,20 @@
 		
 	</head>
 	<body>
- 	<div  class="container-fluid">
-		<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="menu">
+ 	<div  class="container">
+		<div class="navbar navbar-default " role="navigation" id="menu">
 	      <div class="container">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	            <span class="glyphicon glyphicon-list" aria-hidden="true" ></span>
 	          </button>
-	         <a class="navbar-brand" href="index.html"><img src="pic/logo1.png"></a>
+	         <a class="navbar-brand" href="index.html"><img src="pic/logo1.png" ></a>
 	        </div>
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">
-	            <li ><a href="index.html">首页</a></li>
+	            <li><a href="index.html">首页</a></li>
 	            <li><a href="about.html">关于南大</a></li>
-	            <li><a class="dropdown-toggle" data-toggle="dropdown"   href="#contact">研究生院<b class="caret"></b></a>
+	            <li ><a class="dropdown-toggle" data-toggle="dropdown"   href="#contact">研究生院<b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="graduateSchool.html">关于研究生院</a></li>
 						<li><a href="loan.htm">助学贷款</a></li>
@@ -50,7 +48,6 @@
 	            <li class="active">
 	              <a class="dropdown-toggle" data-toggle="dropdown" href="#">学校生活<b class="caret"></b></a>
 	              <ul class="dropdown-menu">
-	              	<li><a href="needToKnow.html">开学须知</a></li>
 	                <li><a href="gulouMap.html">鼓楼地图</a></li>
 	                <li><a href="xianlinMap.html">仙林地图</a></li>
 	              </ul>
@@ -61,12 +58,14 @@
 						<li><a href="activity.html">研会活动</a></li>
 					</ul>
 	            </li>
-	          </ul>
-	         
+	            <li>
+	            	<a href="needToKnow.html">开学须知</a>
+	            </li>
+	          </ul>       
 	        </div><!--导航条结束 -->
 	       </div>
 	     </div>
-	     </div>
+	</div>
 	     <div class="container" style="text-align:center">
 	     	<h1>南京大学鼓楼地图</h1>
 	     	<!--百度地图容器-->
