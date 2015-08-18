@@ -12,7 +12,12 @@
 		<link rel="stylesheet" type="text/css" href="css/custom.css">
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-
+		<script type="text/javascript" src="js/jquery.timelinr-0.9.53.js"></script>
+		<script type="text/javascript">
+			$(function(){
+   			 	$().timelinr();
+			});
+		</script>
 	</head>
 	<body>
  	<div  class="container">
@@ -92,11 +97,46 @@
 		  </a>
 	  </div>
 		 <div class="container-fluid" id="info">
-		  	<a href="needToKnow.html" class="btn btn-warning btn-lg">开学须知</a>		
+		  	<h1><a href="needToKnow.html">开学须知</a></h1>
 		  </div>
     </div>
-
-	 
+	<div class="container" id="mytimeline">
+		<div id="timeline">
+		   <ul id="dates">
+		      <li><a href="#date1">8.25</a></li>
+		      <li><a href="#date2">8.30</a></li>
+		      <li><a href="#date3">8.31</a></li>
+		      <li><a href="#date4">9.2</a></li>
+		      <li><a href="#date5">9.*</a></li>
+		      <li><a href="#date6">9.*</a></li>
+		      <li><a href="#date7">9.13</a></li>
+		   </ul>
+		   <ul id="issues">
+		      <li id="date1">
+		         <p>博士、硕士研究生的住宿由房地产管理处负责安排，具体名单于8月25日后在南京大学房地产管理处网页及南京大学百合BBS后勤工作信箱置顶帖中公布，凭入学通知书到所分配的宿舍楼管理部门办理入住手续，领取钥匙，每人交照片1张。</p>
+		      </li>
+		      <li id="date2">
+		         <p>8月30日，凭入学通知书到各院、系报到。高校应届本科毕业生报到时必须持有本科毕业证书，应届硕士毕业生报到时必须持有硕士学位证书。本校硕士生考取博士生的须先办理离校手续，并将离校单、学生证交到教务员处方准予报到。</p>
+		      </li>
+		      <li id="date3">
+		      	<p>8月31号开始体检，和进行疫苗接种。</p>
+		      </li>
+		      <li id="date4">
+		      <p>9月2日—4日,各院系自定半天办理注册手续（研究生缴费后办理注册手续,同时办理内容请看详细链接。</p>
+		      </li>
+		      <li id="date5">
+		      	<p>开学典礼</p>
+		      </li>
+		      <li id="date6">
+		      	<p>入学教育</p>
+		      </li>
+		      <li id="date7">
+		      	<p>9月13日研究生新生开始上课。</p>
+		      </li>
+		   </ul>
+		
+		</div>
+	</div>
 
 	<div class="container">
 		<footer id="footer">
@@ -104,15 +144,18 @@
 				<div class="row">
 					<div class="col-md-4 col-lg-4">
 						<h2>友情链接</h2>
-						<p>小百合bbs:http://bbs.nju.edu.cn</p>
+						<p>南京大学:http://www.nju.edu.cn</p>
 						<p>南京大学研究生院:http://grawww.nju.edu.cn</p>
-						<p>研究生学籍教学管理系统:http://pyb.nju.edu.cn</p>
+						<p>南大团委:http://tuanwei.nju.edu.cn</p>
+						<p>小百合BBS:http://bbs.nju.edu.cn</p>
+						
 					</div>
 					<div class="col-md-4 col-lg-4">
 						<h2>联系我们</h2>
 						<p>邮编：210093</p>
-						<p>鼓楼校区地址：南京市汉口路22号</p>
-						<p>校长办公室电话：086-025-83593186</p>
+						<p>鼓楼校区地址：树华楼</p>
+						<p>仙林校区地址：行政北楼9楼</p>
+						<p>研究生院邮箱：aoys@nju.edu.cn</p>
 					</div>
 					<div class="col-md-4 col-lg-4">
 						<h2>南大研会微信</h2>
